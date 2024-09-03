@@ -5,9 +5,13 @@
 # both inputs will prevent errors
 # if a ValueError occurs, print the message "Invalid input. Must enter a number."
 
-rate = input("Enter hourly pay rate:")
-rate = float(rate)
-hours_worked = input("Enter hours worked in one week:")
-hours_worked = float(hours_worked)
-wages = hours_worked * rate
-print(f"Wages: ${wages:.2f}")
+try:
+    rate = input("Enter hourly pay rate:")
+    rate = float(rate)
+    hours_worked = input("Enter hours worked in one week:")
+    hours_worked = float(hours_worked)
+    wages = hours_worked * rate
+except ValueError:
+    print("Invalid input. Must enter a number.")
+else:
+    print(f"Wages: ${wages:.2f}")
